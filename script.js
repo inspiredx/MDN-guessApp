@@ -48,15 +48,8 @@ function checkGuess() { //Функция проверяет правильнос
     guessField.focus();
 }
 guessSubmit.addEventListener('click', checkGuess); //Слушатель событий на функцию правильности выбора
-// var input = document.getElementById("guessField");
-// input.addEventListener("keyup", function(event) {
-//     if (event.key === 13) {
-//      event.preventDefault();
-//      document.getElementById("guessSubmit").click();
-//     }
-// });
 
-function setGameOver() {    //Функция завершает игру и подводит к ресету
+function setGameOver() { //Функция завершает игру и подводит к ресету
     guessField.disabled = true;
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
@@ -67,20 +60,20 @@ function setGameOver() {    //Функция завершает игру и по
 
 function resetGame() { //Функция перезапускает игру
     guessCount = 1;
-  
+
     var resetParas = document.querySelectorAll('.resultParas p');
-    for (var i = 0 ; i < resetParas.length ; i++) {
-      resetParas[i].textContent = '';
+    for (var i = 0; i < resetParas.length; i++) {
+        resetParas[i].textContent = '';
     }
-  
+
     resetButton.parentNode.removeChild(resetButton);
-  
+
     guessField.disabled = false;
     guessSubmit.disabled = false;
     guessField.value = '';
     guessField.focus();
-  
+
     lastResult.style.backgroundColor = 'white';
-  
+
     randomNumber = Math.floor(Math.random() * 100) + 1;
-  }
+}
